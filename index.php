@@ -19,7 +19,7 @@
 	 
 	// query products
 	$stmt = $product->readAll($from_record_num, $records_per_page);
-	 
+	
 	// specify the page where paging is used
 	$page_url = "index.php?";
 	 

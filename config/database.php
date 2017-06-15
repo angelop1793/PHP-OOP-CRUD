@@ -1,22 +1,24 @@
 <?php
-	
-	//specify your own database credentials
-	private $host = "localhost";
-	private $db_name = "php_oop_crud";
-	private $username = "root";
-	private $password = "";
-	public $conn;
+	class Database{	
+		//specify your own database credentials
+		private $host = "localhost";
+		private $db_name = "php_oop_crud";
+		private $username = "root";
+		private $password = "";
+		public $conn;
 
-	public function getConnection(){
+		public function getConnection(){
 
-		$this->conn = null;
+			$this->conn = null;
 
-		try{
-			$this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-		}catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
-        }
+			try{
+				$this->conn = new PDO("mysql:host=" . $this->host . ";port=3307;dbname=" . $this->db_name, $this->username, $this->password);
+				// die(json_encode(array('outcome' => true)));
+			}catch(PDOException $exception){
+	            echo "Connection error: " . $exception->getMessage();
+	        }
 
-        return $this->conn;
+	        return $this->conn;
+		}
 	}
 ?>

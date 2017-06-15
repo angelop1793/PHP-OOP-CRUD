@@ -66,11 +66,9 @@
 	            <?php
 					// read the product categories from the database
 					$stmt = $category->read();
-					 
 					// put them in a select drop-down
 					echo "<select class='form-control' name='category_id'>";
 					    echo "<option>Select category...</option>";
-					 
 					    while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)){
 					        extract($row_category);
 					        echo "<option value='{$id}'>{$name}</option>";
@@ -92,5 +90,5 @@
 	</form>
 <?php
 	//footer
-	include_once "fotter.php";
+	include_once "footer.php";
 ?>
