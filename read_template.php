@@ -28,7 +28,6 @@
                 echo "<th>Category</th>";
                 echo "<th>Actions</th>";
             echo "</tr>";
-     
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
      
                 extract($row);
